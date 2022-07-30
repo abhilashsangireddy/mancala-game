@@ -1,92 +1,52 @@
-# Abhilash Sangireddy
+# Documentation
+
+Since this is a two player [symmetric game](https://en.wikipedia.org/wiki/Symmetric_game), the code is designed in such a way that it is disassociated with the player it is dealing with. Irrespective of player one/ two the services are written in such a way that they follow the same logic for computation.
+
+Java documentation has been written and generated for this code to explain each of its components in depth.
+[Link to java documentation](https://abhilashsangireddy.github.io/mancala-documentation/java/index.html)
+
+The endpoints exposed by this game are also documented using swagger and it can be found in the following link:
+[Link to API documentation](https://abhilashsangireddy.github.io/mancala-documentation/swagger/index.html)
+
+
+# Setup:
 
 
 
-## Getting started
+This project contains the source code of Mancala game a two player board game. This application uses **SpringBoot** for backend and **React** for frontend.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+The following steps describe the process to run this application:
+1. Clone/Download the zip into a directory. The directory in which the code is present to will be referred to as *GameDirectory* going forward.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+2. Run the following commands to start the frontend server:
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/bolcom/abhilash-sangireddy.git
-git branch -M master
-git push -uf origin master
+cd GameDirectory/frontend
+nmp install
+npm start
 ```
+Running this will download all the dependencies related to the user interface and will start the server on localhost:3000
 
-## Integrate with your tools
+Once you open localhost:3000, you should be seeing a screen like this:
 
-- [ ] [Set up project integrations](https://gitlab.com/bolcom/abhilash-sangireddy/-/settings/integrations)
+![Mancala game landing page](https://abhilashsangireddy.github.io/mancala-documentation/pics/1.png)
 
-## Collaborate with your team
+3. Run the following commands to start the backend server:
+```
+cd GameDirectory
+./gradlew run
+```
+Running this will download all the dependencies related to the backend and will start the server on localhost:8080
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
 
-## Test and Deploy
+# Playing the game
 
-Use the built-in continuous integration in GitLab.
+Once the setup is done, enter the names of two players and send the request to start the game.
+On clicking **start** button, you will be redirected to a page like this:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+![enter image description here](https://abhilashsangireddy.github.io/mancala-documentation/pics/2.png)
 
-***
+The ⛹️ logo denotes the player who is supposed to take the next turn. In the above mentioned example, the next turn is to be played by *playerOne*
 
-# Editing this README
+Once the end condition is reached, the game will automatically end. If you wish to stop the game midway, just click on the **End Game** button and it will stop the game and declare the player with most number of stones in all of his pits (small and big combined) as the winner. Or as a tie game if both of them have equal scores.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+![enter image description here](https://abhilashsangireddy.github.io/mancala-documentation/pics/3.png)
